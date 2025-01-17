@@ -4,34 +4,49 @@ import { useState } from 'react';
 
 const Hero = () => {
     const [newEmail, setNewEmail] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState(false);
+
     const apiKey = import.meta.env.VITE_API_KEY;
     const apiUrl = import.meta.env.VITE_API_URL;
-    console.log("API Key:", apiKey);
-    console.log("API URL:", apiUrl);
 
-    function handleSubmit(e:any) {
+    async function handleSubmit(e) {
         e.preventDefault();
         const email = newEmail.trim();
-        if (email) {
-            fetch(`${apiUrl}/b`, {
+        
+        if (!email) {
+            return;
+        }
+
+        setIsLoading(true);
+        setError("");
+        
+        try {
+            const response = await fetch(`${apiUrl}`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Master-key': `${apiKey}`,
+                    'X-Master-key': apiKey
                 },
                 body: JSON.stringify({
-                    email,
-                }),
-            })
-            .then(response =>{ 
-              response.json();
-              console.log(response);
-            }
-          )
-            .then(data => {
-             
-                console.log(data);
+                    email: email
+                })
             });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log("Success:", data);
+            setSuccess(true);
+            setNewEmail("");
+        } catch (error) {
+            console.error("Error:", error);
+            setError("Failed to join waitlist");
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -49,12 +64,20 @@ const Hero = () => {
                     TIMET, A TIMELESS TICKET
                 </span>
                 <form className='waitlist' onSubmit={handleSubmit}>
-                    <input type="email" value={newEmail} onChange={e => setNewEmail(e.target.value)} />
-                    <button>JOIN THE WAIT LIST</button>
+                    <input 
+                        type="email" 
+                        value={newEmail} 
+                        onChange={e => setNewEmail(e.target.value)}
+                        disabled={isLoading}
+                    />
+                    <button disabled={isLoading}>
+                        {isLoading ? "JOINING..." : "JOIN THE WAIT LIST"}
+                    </button>
+                    {error && <div style={{ color: 'red', marginTop: '10px' }}>{error}</div>}
+                    {success && <div style={{ color: 'green', marginTop: '10px' }}>Successfully joined!</div>}
                 </form>
             </div>
         </div>
     );
 }
-
 export default Hero;
