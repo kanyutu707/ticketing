@@ -27,7 +27,7 @@ const Hero = () => {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Master-key': apiKey
+                    'X-SILO-KEY': apiKey
                 },
                 body: JSON.stringify({
                     email: email
