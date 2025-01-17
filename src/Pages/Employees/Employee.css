@@ -1,0 +1,70 @@
+.employee{
+    padding: 20px;
+    width: 100%;
+}
+.employee table{
+    background-color: white;
+    width: 100%;
+}
+.employee table tbody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.employee table thead, .employee table tbody tr{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    text-align: start;
+    align-items: flex-end;
+    justify-items: start;
+    width: 100%;
+    padding: 5px;
+
+}
+.employee table thead{
+    height: 49px;
+    border-bottom: 2px solid black;
+  
+}
+.employee table tbody tr{
+    height: 44px;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+.employee table caption{
+    background-color: white;
+    padding: 5px;
+    border-bottom: 2px solid whitesmoke;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    font-weight: 600;
+}
+.employee table caption select{
+    height: 35px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid ;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.employee table tbody tr:hover{
+    background-color: rgb(250, 250, 250);
+}
+.employee table caption button{
+    background-color: white;
+    border: 1px solid ;
+    height: 35px;
+    width: 110px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

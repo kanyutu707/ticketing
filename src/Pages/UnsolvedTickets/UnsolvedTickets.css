@@ -1,0 +1,3 @@
+.pendingtickets table thead, .pendingtickets table tbody tr{
+    grid-template-columns: repeat(5, 1fr);
+}

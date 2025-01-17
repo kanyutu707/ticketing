@@ -1,0 +1,38 @@
+.offercontainer{
+    display: flex;
+    flex-direction: column;
+    background-color:whitesmoke;
+    margin: 20px;
+}
+.offercontainer header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 800;
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 17px;
+}
+.offercontainer section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 14px;
+
+}
+.offercontainer section span{
+    background-color: white;
+    padding: 12px;
+}
+.offercontainer section span h3{
+    font-size: 20px;
+    font-weight: 800;
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 5px;
+    padding: 3px;
+}
+.offercontainer section span h5{
+    font-size: 16px;
+    font-weight: 200;
+    padding: 7px;
+}

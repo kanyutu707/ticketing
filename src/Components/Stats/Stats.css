@@ -1,0 +1,44 @@
+.statscontainer{
+    background-color: whitesmoke;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 14px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.statscontainer section{
+    background-color: white;
+    height: 88px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+.statscontainer section .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.statscontainer section .left h3{
+    font-size: 25px;
+    font-weight: 750;
+}
+.statscontainer section .left h4{
+    font-size: 20px;
+    font-weight: 500;
+}
+.statscontainer section .right{
+  display: grid;
+  align-items: center;
+  padding: 10px;
+}
+.statscontainer section .right svg{
+    width: 50px;
+    height: 50px;
+   
+    justify-self: center;
+    border-radius: 100%;
+
+}
