@@ -2,7 +2,7 @@ import { GiPadlock } from 'react-icons/gi'
 import './Hero.css'
 import { useState } from 'react'
 const Hero = () => {
-  const [jsonData, setJsonData]=useState([]);
+
   const [newEmail, setNewEmail]=useState("");
   const apiKey = process.env.REACT_APP_API_KEY;
 const apiUrl = process.env.REACT_APP_API_URL;
