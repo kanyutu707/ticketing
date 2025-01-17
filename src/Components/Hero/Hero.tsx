@@ -13,7 +13,7 @@ const Hero = () => {
         e.preventDefault();
         const email = newEmail.trim();
         if (email) {
-            fetch(`${apiUrl}/waitlist`, {
+            fetch(`${apiUrl}/b`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
