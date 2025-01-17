@@ -8,6 +8,7 @@ const Hero = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
 
+    const apiKey = import.meta.env.VITE_API_KEY;
     const apiUrl = import.meta.env.VITE_API_URL;
 
     async function handleSubmit(e:any) {
@@ -25,7 +26,8 @@ const Hero = () => {
             const response = await fetch(`${apiUrl}`, {
                 method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'X-Master-key': apiKey
                 },
                 body: JSON.stringify({
                     email: email
