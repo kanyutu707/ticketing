@@ -11,7 +11,7 @@ const Hero = () => {
     const apiKey = import.meta.env.VITE_API_KEY;
     const apiUrl = import.meta.env.VITE_API_URL;
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e:any) {
         e.preventDefault();
         const email = newEmail.trim();
         
@@ -79,5 +79,7 @@ const Hero = () => {
             </div>
         </div>
     );
-}
+  
+  }
+
 export default Hero;
