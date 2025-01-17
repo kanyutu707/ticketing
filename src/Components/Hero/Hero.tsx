@@ -4,8 +4,8 @@ import { useState } from 'react'
 const Hero = () => {
 
   const [newEmail, setNewEmail]=useState("");
-  const apiKey = process.env.REACT_APP_API_KEY;
-const apiUrl = process.env.REACT_APP_API_URL;
+  const apiKey = process.env.VITE_API_KEY;
+const apiUrl = process.env.VITE_API_URL;
 
 console.log("API Key:", apiKey);
 console.log("API URL:", apiUrl);
