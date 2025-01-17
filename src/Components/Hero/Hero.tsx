@@ -4,12 +4,19 @@ import { useState } from 'react'
 const Hero = () => {
   const [jsonData, setJsonData]=useState([]);
   const [newEmail, setNewEmail]=useState("");
+  const apiKey = process.env.REACT_APP_API_KEY;
+const apiUrl = process.env.REACT_APP_API_URL;
+
+console.log("API Key:", apiKey);
+console.log("API URL:", apiUrl);
   function handleSubmit(e:any){
     e.preventDefault();
     const email=newEmail.trim();
     if (email){
-      fetch("https://api.jsonbin.io/v3/waitlist", {
+      fetch(`${apiUrl}/waitlist`, {
         method:"POST",
+        
+        X-Master-key:`${apiKey}`,
         body:JSON.stringify({
           email,
         }),
