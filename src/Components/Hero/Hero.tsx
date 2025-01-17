@@ -15,14 +15,14 @@ console.log("API URL:", apiUrl);
     if (email){
       fetch(`${apiUrl}/waitlist`, {
         method:"POST",
-        
-        X-Master-key:`${apiKey}`,
+       headers:{
+        'Content-Type': 'application/json',
+        'X-Master-key': `${apiKey}`,
+       },
         body:JSON.stringify({
           email,
         }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
+       
       })
       .then(response=>response.json())
       .then(data=>{
