@@ -8,7 +8,7 @@ const Hero = () => {
     e.preventDefault();
     const email=newEmail.trim();
     if (email){
-      fetch("https://api.jsonbin.io/v3 Copy/waitlist", {
+      fetch("https://api.jsonbin.io/v3/waitlist", {
         method:"POST",
         body:JSON.stringify({
           email,
