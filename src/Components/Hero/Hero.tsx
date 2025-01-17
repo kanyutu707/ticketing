@@ -23,8 +23,13 @@ const Hero = () => {
                     email,
                 }),
             })
-            .then(response => response.json())
+            .then(response =>{ 
+              response.json();
+              console.log(response);
+            }
+          )
             .then(data => {
+             
                 console.log(data);
             });
         }
