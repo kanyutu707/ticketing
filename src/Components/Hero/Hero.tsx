@@ -1,12 +1,14 @@
 import { GiPadlock } from 'react-icons/gi';
 import './Hero.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
     const [newEmail, setNewEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
+    const navigate=useNavigate();
 
     const apiKey = import.meta.env.VITE_API_KEY;
     const apiUrl = import.meta.env.VITE_API_URL;
@@ -54,7 +56,7 @@ const Hero = () => {
         <div className="herocontainer">
             <nav>
                 <span>TICKETING SYSTEM</span>
-                <GiPadlock title='GET STARTED' />
+                <GiPadlock title='GET STARTED' onClick={() => navigate('/auth')}/>
             </nav>
             <div className='content'>
                 <section>
